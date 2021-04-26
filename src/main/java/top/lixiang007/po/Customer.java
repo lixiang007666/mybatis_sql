@@ -1,4 +1,7 @@
 package top.lixiang007.po;
+
+import java.util.List;
+
 /**
  * 客户持久化类
  */
@@ -7,6 +10,25 @@ public class Customer {
 	private String username; // 客户名称
 	private String jobs;      // 职业
 	private String phone;     // 电话
+
+	public List<Orders> getOrdersList() {
+		return ordersList;
+	}
+
+	public void setOrdersList(List<Orders> ordersList) {
+		this.ordersList = ordersList;
+	}
+
+	private List<Orders> ordersList;
+	public IdCard getCard() {
+		return card;
+	}
+
+	public void setCard(IdCard card) {
+		this.card = card;
+	}
+
+	private IdCard card;  //个人关联的证件
 	public Integer getId() {
 		return id;
 	}
@@ -31,9 +53,16 @@ public class Customer {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", username=" + username +
-				", jobs=" + jobs + ", phone=" + phone + "]";
+		return "Customer{" +
+				"id=" + id +
+				", username='" + username + '\'' +
+				", jobs='" + jobs + '\'' +
+				", phone='" + phone + '\'' +
+				", ordersList=" + ordersList +
+				", card=" + card +
+				'}';
 	}
 }
